@@ -5,14 +5,18 @@ plugins {
 }
 
 android {
-
+    packagingOptions {
+        resources {
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+        }
+    }
     namespace = "tn.m1mpdam.trinumbers"
     compileSdk = 34
 
     defaultConfig {
         applicationId = "tn.m1mpdam.trinumbers"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -44,11 +48,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.3"
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
     buildToolsVersion = "34.0.0"
 }
 
